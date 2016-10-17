@@ -1,0 +1,26 @@
+
+
+Servo myservo;  
+int myPos;                
+
+int pos = 0;    
+void setup()
+{
+  myservo.attach(D0);
+  pinMode(A0, INPUT_PULLDOWN);
+  
+  
+}
+
+
+void loop()
+{
+    myPos = digitalRead(A0)/400;
+    if (myPos < 0) {myPos=0;}
+    if (myPos > 90) {myPos=90;}
+    myservo.write(myPos);              
+    delay(1000);         
+    
+
+  
+}                                                                                    
